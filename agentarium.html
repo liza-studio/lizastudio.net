@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agentarium — a simulated district of AI residents — Liza Studio</title>
+  <meta name="description" content="Agentarium is a simulated district populated by AI residents with memory, budgets and habits. We use it to rehearse products and consumer scenarios before a launch.">
+  <meta name="theme-color" content="#0A0B0E">
+  <link rel="canonical" href="https://lizastudio.ai/agentarium.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Liza Studio">
+  <meta property="og:url" content="https://lizastudio.ai/">
+  <meta property="og:title" content="Agentarium — a simulated district of AI residents">
+  <meta property="og:description" content="Agentarium is a simulated district populated by AI residents with memory, budgets and habits. We use it to rehearse products and consumer scenarios before a launch.">
+  <meta property="og:locale" content="en_US">
+
+  
+
+  <link rel="icon" type="image/svg+xml" href="assets/lisa-favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css?v=20261124a">
+  <style>
+    .price{font-family:var(--display); font-weight:200; font-size:34px; letter-spacing:-.02em; color:var(--paper); line-height:1.1}
+    .price small{font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted-2)}
+    .plan ul{margin:6px 0 0; padding:0; list-style:none; display:grid; gap:7px; font-size:14.5px; line-height:1.5; color:var(--muted)}
+    .plan li{padding-left:16px; position:relative}
+    .plan li::before{content:""; position:absolute; left:0; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--accent-soft)}
+    .plan--main{border-color:var(--accent)}
+    .plan .btn{margin-top:12px; justify-self:start}
+    .code{font-family:var(--mono); font-size:13.5px; background:#0D0F13; border:1px solid var(--line); border-radius:10px; padding:12px 14px; color:var(--paper); overflow-x:auto; white-space:nowrap}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="./#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="logo" href="./" aria-label="Liza Studio — home">
+        <svg class="logo__mark" viewBox="-100 -100 200 200" width="30" height="30" aria-hidden="true">
+          <g><circle cx="82" cy="0" r="9" fill="currentColor"></circle><circle cx="-58" cy="58" r="6.5" fill="currentColor"></circle><circle cx="-30" cy="-76" r="5" fill="#3D5AE0"></circle></g>
+          <g><circle cx="48" cy="-12" r="4" fill="currentColor" opacity="0.55"></circle></g>
+          <circle cx="0" cy="0" r="16" fill="currentColor"></circle>
+          <circle cx="0" cy="0" r="5" fill="#3D5AE0"></circle>
+        </svg>
+        <span class="logo__word">Liza <span class="logo__muted">Studio</span></span>
+      </a>
+
+      <nav class="header__nav" aria-label="Main menu">
+        <a class="header__link" href="./#business">For business</a>
+        <a class="header__link" href="./#skillmem">skillmem</a>
+        <a class="header__link" href="./#pricing">Pricing</a>
+        <a class="header__link" href="agentarium.html">Agentarium</a>
+        <a class="header__link" href="https://github.com/liza-studio/skillmem" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+
+      <div class="header__right">
+        <a class="btn btn--primary btn--sm header__cta" href="mailto:hello@lizastudio.ai?subject=Liza%20for%20Business">
+          <span class="btn__full">Talk to us</span>
+          <span class="btn__short" aria-hidden="true">Contact</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <button class="header__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile menu" hidden>
+      <a href="./#business">For business</a>
+      <a href="./#skillmem">skillmem</a>
+      <a href="./#pricing">Pricing</a>
+      <a href="agentarium.html">Agentarium</a>
+      <a href="https://github.com/liza-studio/skillmem" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+    <main id="main">
+    <section class="section section--paper">
+      <div class="container">
+        <header class="section__header section__header--row">
+          <div>
+            <p class="mono-label">Agentarium · research environment</p>
+            <h1 class="section__title section__title--narrow">A district of AI residents, where a product meets its users before the launch.</h1>
+          </div>
+          <p class="section__sub">Agentarium is a simulated neighbourhood. Its residents are AI agents with a biography, a budget, habits and memory. We put a product or a scenario into their world and watch what they do with it.</p>
+        </header>
+        <div class="hero__stats" style="margin-top:0">
+          <div><b>~190</b><span>residents in the district</span></div>
+          <div><b>30 min</b><span>world tick</span></div>
+          <div><b>2</b><span>modes: seasons and district</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cool">
+      <div class="container">
+        <header class="section__header section__header--row">
+          <div>
+            <p class="mono-label">The world</p>
+            <h2 class="section__title section__title--narrow">Residents who remember yesterday.</h2>
+          </div>
+          <p class="section__sub">A resident is not a one-off prompt. Each one carries a life forward from tick to tick, so behaviour on day twenty depends on what happened on day three.</p>
+        </header>
+        <div class="grid grid--3 system__cards">
+          <article class="info-card">
+            <p class="mono-label">Residents</p>
+            <h3 class="info-card__title">Memory and reflection.</h3>
+            <p class="info-card__text">Every resident has a biography, money, a daily routine and neighbours. They keep memories, form thoughts during the day and reflect at night on what happened.</p>
+          </article>
+          <article class="info-card">
+            <p class="mono-label">Rules</p>
+            <h3 class="info-card__title">The model proposes, the world decides.</h3>
+            <p class="info-card__text">A language model suggests what a resident wants to do. A separate arbiter with fixed rules decides the outcome, so nobody can invent money or results that the world does not allow.</p>
+          </article>
+          <article class="info-card">
+            <p class="mono-label">Skills</p>
+            <h3 class="info-card__title">Habits that grow and fade.</h3>
+            <p class="info-card__text">What a resident learns is stored with skillmem, our open-source memory layer: useful skills get stronger, unused ones fade. Residents change over time instead of resetting.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper">
+      <div class="container">
+        <header class="section__header section__header--row">
+          <div>
+            <p class="mono-label">What we test</p>
+            <h2 class="section__title section__title--narrow">Consumer tasks and demand signals, rehearsed first.</h2>
+          </div>
+          <p class="section__sub">A launch is expensive to repeat. A season in Agentarium is not. We run the same district with and without a product, or with two versions of it, and compare.</p>
+        </header>
+        <div class="steps">
+          <article class="step">
+            <div class="step__num">01</div>
+            <h3 class="step__title">Real consumer tasks.</h3>
+            <p class="step__text">Residents bring everyday problems to a product: a contract to check, a trip to plan, a bill that looks wrong. We see which tasks it handles and where it fails.</p>
+          </article>
+          <article class="step">
+            <div class="step__num">02</div>
+            <h3 class="step__title">Demand and word of mouth.</h3>
+            <p class="step__text">Part of the district gets the product, the rest is a control group. We watch who starts using it, who drops it, and whether neighbours hear about it.</p>
+          </article>
+          <article class="step">
+            <div class="step__num">03</div>
+            <h3 class="step__title">Pressure scenarios.</h3>
+            <p class="step__text">We stage situations that are hard to test on real people: a caller who rushes a resident into a payment, a confusing offer, a service outage.</p>
+          </article>
+        </div>
+        <p class="mono-label mono-label--muted" style="margin-top:28px; line-height:1.6; max-width:760px;">↳ First customer: our own assistant, Liza. It lives in the residents' phones, and the district is where we look for its failures before real users find them.</p>
+      </div>
+    </section>
+
+    <section class="section section--cool">
+      <div class="container">
+        <header class="section__header section__header--row">
+          <div>
+            <p class="mono-label">Limits</p>
+            <h2 class="section__title section__title--narrow">A rehearsal, <span class="text-muted">not a forecast.</span></h2>
+          </div>
+          <p class="section__sub">Synthetic residents are not a sample of a real market. We say so up front, because the value of the method depends on not overstating it.</p>
+        </header>
+        <div class="grid grid--3 system__cards">
+          <article class="info-card">
+            <p class="mono-label">What it gives</p>
+            <h3 class="info-card__title">Comparisons and failures.</h3>
+            <p class="info-card__text">Which of two versions residents prefer and why, which tasks break the product, which messages are misunderstood.</p>
+          </article>
+          <article class="info-card">
+            <p class="mono-label">What it does not give</p>
+            <h3 class="info-card__title">Market percentages.</h3>
+            <p class="info-card__text">Agentarium does not predict conversion or market share. Findings are hypotheses to confirm with real customers.</p>
+          </article>
+          <article class="info-card">
+            <p class="mono-label">Isolation</p>
+            <h3 class="info-card__title">A closed world.</h3>
+            <p class="info-card__text">The simulation runs in an isolated environment with no access to outside systems. Residents are synthetic personas; no real customer acts inside it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="start">
+      <div class="container cta__inner">
+        <p class="mono-label mono-label--muted">Research partnership</p>
+        <h2 class="cta__title">Rehearse a launch in the district.<br><span class="text-muted">Then take it to real users.</span></h2>
+        <div class="cta__actions">
+          <a class="btn btn--paper" href="mailto:hello@lizastudio.ai?subject=Agentarium">Talk to us <span aria-hidden="true">→</span></a>
+          <a class="btn btn--outline-light" href="./">About Liza Studio <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="logo logo--footer">
+            <svg class="logo__mark" viewBox="-100 -100 200 200" width="44" height="44" aria-hidden="true">
+              <circle cx="0" cy="0" r="82" fill="none" stroke="currentColor" stroke-width="1.25" stroke-dasharray="1.5 4" opacity="0.55"></circle>
+              <circle cx="0" cy="0" r="48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-dasharray="1.5 4" opacity="0.35"></circle>
+              <g><circle cx="82" cy="0" r="9" fill="currentColor"></circle><circle cx="-58" cy="58" r="6.5" fill="currentColor"></circle><circle cx="-30" cy="-76" r="5" fill="#3D5AE0"></circle></g>
+              <g><circle cx="48" cy="-12" r="4" fill="currentColor" opacity="0.55"></circle></g>
+              <circle cx="0" cy="0" r="16" fill="currentColor"></circle>
+              <circle cx="0" cy="0" r="5" fill="#3D5AE0"></circle>
+            </svg>
+            <div>
+              <div class="logo__word">Liza Studio</div>
+              <p class="mono-label mono-label--muted">agent studio</p>
+            </div>
+          </div>
+          <p class="footer__about">AI agent teams with long-term memory. Free for individuals, on a dedicated server for companies.</p>
+        </div>
+        <nav class="footer__nav" aria-label="Product">
+          <p class="mono-label mono-label--muted">Product</p>
+          <ul>
+            <li><a href="./#business">For business</a></li>
+            <li><a href="./#agents">Agents</a></li>
+            <li><a href="./#pricing">Pricing</a></li>
+            <li><a href="agentarium.html">Agentarium</a></li>
+          </ul>
+        </nav>
+        <nav class="footer__nav" aria-label="Open source">
+          <p class="mono-label mono-label--muted">Open source</p>
+          <ul>
+            <li><a href="https://github.com/liza-studio/skillmem" target="_blank" rel="noopener">skillmem on GitHub</a></li>
+            <li><a href="https://skillmem.dev" target="_blank" rel="noopener">skillmem.dev</a></li>
+            <li><a href="mailto:hello@lizastudio.ai">hello@lizastudio.ai</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__req">
+        <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a> · <a href="mailto:hello@lizastudio.ai">hello@lizastudio.ai</a>
+      </div>
+      <div class="footer__bottom">
+        <span class="mono-label mono-label--muted">© 2026 Liza Studio</span>
+        <span class="mono-label mono-label--muted">lizastudio.ai</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+      var burger = document.querySelector('.header__burger');
+      var menu = document.getElementById('mobile-menu');
+      if (!burger || !menu) return;
+      function setOpen(open) {
+        burger.setAttribute('aria-expanded', String(open));
+        burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        menu.hidden = !open;
+      }
+      burger.addEventListener('click', function () {
+        setOpen(burger.getAttribute('aria-expanded') !== 'true');
+      });
+      menu.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+    })();
+  </script>
+</body>
+</html>
