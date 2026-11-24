@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liza Studio — AI agent teams with long-term memory, on your own server</title>
+  <meta name="description" content="Liza Studio builds teams of AI agents that share long-term memory. Free for individuals, deployed on a dedicated server for companies. Memory layer skillmem is open source under Apache-2.0.">
+  <meta name="theme-color" content="#0A0B0E">
+  <link rel="canonical" href="https://lizastudio.ai/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Liza Studio">
+  <meta property="og:url" content="https://lizastudio.ai/">
+  <meta property="og:title" content="Liza Studio — AI agent teams with long-term memory">
+  <meta property="og:description" content="A team of AI agents with shared long-term memory. Free for individuals, on a dedicated server for companies. Open-source memory layer: skillmem.">
+  <meta property="og:locale" content="en_US">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://lizastudio.ai/#org",
+      "name": "Liza Studio",
+      "url": "https://lizastudio.ai/",
+      "description": "Developer of Liza, a team of AI agents with shared long-term memory, and of skillmem, an open-source memory layer for coding agents.",
+      "sameAs": ["https://github.com/liza-studio"]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Liza for Business",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Linux (self-hosted)",
+      "publisher": {"@id": "https://lizastudio.ai/#org"},
+      "offers": [
+        {"@type": "Offer", "name": "Personal", "price": "0", "priceCurrency": "USD"},
+        {"@type": "Offer", "name": "Team", "price": "490", "priceCurrency": "USD"},
+        {"@type": "Offer", "name": "Enterprise", "price": "1900", "priceCurrency": "USD"}
+      ]
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "skillmem",
+      "codeRepository": "https://github.com/liza-studio/skillmem",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "programmingLanguage": "Python",
+      "publisher": {"@id": "https://lizastudio.ai/#org"}
+    }
+  ]
+}
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="assets/lisa-favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css?v=20261124a">
+  <style>
+    .price{font-family:var(--display); font-weight:200; font-size:34px; letter-spacing:-.02em; color:var(--paper); line-height:1.1}
+    .price small{font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted-2)}
+    .plan ul{margin:6px 0 0; padding:0; list-style:none; display:grid; gap:7px; font-size:14.5px; line-height:1.5; color:var(--muted)}
+    .plan li{padding-left:16px; position:relative}
+    .plan li::before{content:""; position:absolute; left:0; top:.62em; width:6px; height:6px; border-radius:50%; background:var(--accent-soft)}
+    .plan--main{border-color:var(--accent)}
+    .plan .btn{margin-top:12px; justify-self:start}
+    .code{font-family:var(--mono); font-size:13.5px; background:#0D0F13; border:1px solid var(--line); border-radius:10px; padding:12px 14px; color:var(--paper); overflow-x:auto; white-space:nowrap}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="logo" href="/" aria-label="Liza Studio — home">
+        <svg class="logo__mark" viewBox="-100 -100 200 200" width="30" height="30" aria-hidden="true">
+          <g><circle cx="82" cy="0" r="9" fill="currentColor"></circle><circle cx="-58" cy="58" r="6.5" fill="currentColor"></circle><circle cx="-30" cy="-76" r="5" fill="#3D5AE0"></circle></g>
+          <g><circle cx="48" cy="-12" r="4" fill="currentColor" opacity="0.55"></circle></g>
+          <circle cx="0" cy="0" r="16" fill="currentColor"></circle>
+          <circle cx="0" cy="0" r="5" fill="#3D5AE0"></circle>
+        </svg>
+        <span class="logo__word">Liza <span class="logo__muted">Studio</span></span>
+      </a>
+
+      <nav class="header__nav" aria-label="Main menu">
+        <a class="header__link" href="#business">For business</a>
+        <a class="header__link" href="#skillmem">skillmem</a>
+        <a class="header__link" href="#pricing">Pricing</a>
+        <a class="header__link" href="https://github.com/liza-studio/skillmem" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+
+      <div class="header__right">
+        <a class="btn btn--primary btn--sm header__cta" href="mailto:hello@lizastudio.ai?subject=Liza%20for%20Business">
+          <span class="btn__full">Talk to us</span>
+          <span class="btn__short" aria-hidden="true">Contact</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <button class="header__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile menu" hidden>
+      <a href="#business">For business</a>
+      <a href="#skillmem">skillmem</a>
+      <a href="#pricing">Pricing</a>
+      <a href="https://github.com/liza-studio/skillmem" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero__media" aria-hidden="true">
+        <video id="hero-video" poster="assets/liza-poster-hd.jpg"
+               autoplay muted loop playsinline webkit-playsinline preload="auto"
+               disablepictureinpicture disableremoteplayback>
+          <source src="assets/liza-alive-hd.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <p class="mono-label hero__eyebrow">AI agents with long-term memory</p>
+        <h1 class="hero__title"><b>Liza</b> — a team of AI agents that remembers your business.</h1>
+        <p class="hero__offer">Free for individuals. On a dedicated server for companies.</p>
+        <p class="hero__lead">Fourteen specialist agents share one memory: a request comes in, the right agent picks it up, and what was learned stays for next time. Companies run Liza on their own server, so the data never leaves it.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="mailto:hello@lizastudio.ai?subject=Liza%20for%20Business">Request a deployment <span aria-hidden="true">→</span></a>
+          <a class="btn btn--outline" href="https://t.me/LizaPetrovna_bot?start=ai_hero" target="_blank" rel="noopener">Try free in Telegram <span aria-hidden="true">→</span></a>
+        </div>
+        <p class="mono-label mono-label--muted hero__note">↳ Available in Telegram today. Web and API are on the roadmap.</p>
+        <div class="hero__stats">
+          <div><b>14</b><span>agents</span></div>
+          <div><b>1</b><span>shared memory</span></div>
+          <div><b>$0</b><span>for individuals</span></div>
+          <div><b>Apache-2.0</b><span>open memory layer</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cool" id="business">
+      <div class="container">
+        <header class="section__header section__header--row">
+          <div>
+            <p class="mono-label">For business</p>
+            <h2 class="section__title section__title--narrow">Your own agent team, on your own server.</h2>
+          </div>
+          <p class="section__sub">We install Liza on a server dedicated to your company, connect it to the tools your people already use, and tune the agents to your processes.</p>
+        </header>
+        <div class="grid grid--3 system__cards">
+          <article class="info-card">
+            <p class="mono-label">Deployment</p>
+            <h3 class="info-card__title">Dedicated server.</h3>
+            <p class="info-card__text">One instance per customer, in our cloud or on your hardware. Conversations, files and memory are stored on that server and are not mixed with anyone else's.</p>
+          </article>
+          <article class="info-card">
+            <p class="mono-label">Memory</p>
+            <h3 class="info-card__title">Knowledge that stays.</h3>
+            <p class="info-card__text">Agents keep decisions, context and working procedures between conversations. A new employee asks a question and gets the answer the team already worked out.</p>
+          </article>
+          <article class="info-card">
+            <p class="mono-label">Customisation</p>
+            <h3 class="info-card__title">Agents for your work.</h3>
+            <p class="info-card__text">Start with the standard team, then add agents built for your domain, with access to your data sources and internal tools.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="agents">
+      <div class="container">
+        <header class="section__header section__header--row">
+          <div>
+            <p class="mono-label">Agents</p>
+            <h2 class="section__title section__title--narrow">Not one general bot — a team of specialists.</h2>
+          </div>
+          <p class="section__sub">Each agent has its own tools and instructions. They hand tasks to each other and work from the same memory. A selection of the fourteen:</p>
+        </header>
+        <div class="agents-grid">
+          <article class="agent-card">
+            <p class="mono-label">Hub</p>
+            <h3 class="agent-card__title">Secretary</h3>
+            <p class="agent-card__text">Takes any request, brings in the right specialist and assembles the result. Keeps the calendar and reminders.</p>
+          </article>
+          <article class="agent-card">
+            <p class="mono-label">Legal</p>
+            <h3 class="agent-card__title">Lawyer</h3>
+            <p class="agent-card__text">Reviews contracts, drafts claims and explains obligations in plain language.</p>
+          </article>
+          <article class="agent-card">
+            <p class="mono-label">Decisions</p>
+            <h3 class="agent-card__title">Council</h3>
+            <p class="agent-card__text">Convenes a panel of experts on a hard decision: positions, criticism, verdict.</p>
+          </article>
+          <article class="agent-card">
+            <p class="mono-label">Documents</p>
+            <h3 class="agent-card__title">Photo expert</h3>
+            <p class="agent-card__text">Reads text from a photo or scan: a contract, an invoice, a receipt, a sign.</p>
+          </article>
+          <article class="agent-card">
+            <p class="mono-label">Voice</p>
+            <h3 class="agent-card__title">Clone</h3>
+            <p class="agent-card__text">A digital twin that knows your context and writes in your style when you are away.</p>
+          </article>
+          <article class="agent-card">
+            <p class="mono-label">Images</p>
+            <h3 class="agent-card__title">Designer</h3>
+            <p class="agent-card__text">Generates images for a task: covers, illustrations, visuals for posts.</p>
+          </article>
+          <article class="agent-card">
+            <p class="mono-label">Video</p>
+            <h3 class="agent-card__title">Videographer</h3>
+            <p class="agent-card__text">Makes short clips from text, stills and ideas.</p>
+          </article>
+          <article class="agent-card">
+            <p class="mono-label">Travel</p>
+            <h3 class="agent-card__title">Flight desk</h3>
+            <p class="agent-card__text">Finds flights by date and price, tracks fares, shows flight status and gates.</p>
+          </article>
+          <article class="agent-card">
+            <p class="mono-label">Training</p>
+            <h3 class="agent-card__title">Tutor</h3>
+            <p class="agent-card__text">An English teacher for staff: practice, error review, steady progress level by level.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cool" id="skillmem">
+      <div class="container">
+        <header class="section__header section__header--row">
+          <div>
+            <p class="mono-label">Open source</p>
+            <h2 class="section__title section__title--narrow">We taught AI to forget. So it keeps only what works.</h2>
+          </div>
+          <p class="section__sub">skillmem is our open memory layer for coding agents such as Claude Code and Codex. It runs locally on plain SQLite: no cloud, no API keys, no charge per memory.</p>
+        </header>
+        <div class="steps">
+          <article class="step">
+            <div class="step__num">01</div>
+            <h3 class="step__title">Strength is earned.</h3>
+            <p class="step__text">A skill gets stronger only on outside evidence, such as a passing test. Unused skills fade on a forgetting curve and are archived, never deleted.</p>
+          </article>
+          <article class="step">
+            <div class="step__num">02</div>
+            <h3 class="step__title">Trust is granted by the owner.</h3>
+            <p class="step__text">Every memory records where it came from. Anything the owner has not approved is passed to the agent as data, not as instructions.</p>
+          </article>
+          <article class="step">
+            <div class="step__num">03</div>
+            <h3 class="step__title">History you can verify.</h3>
+            <p class="step__text">Every edit is appended to a SHA-256 hash chain, so tampering after the fact is detected. Everything exports to plain Markdown.</p>
+          </article>
+        </div>
+        <p class="code" style="margin-top:28px; max-width:420px;">pip install skillmem</p>
+        <p class="mono-label mono-label--muted" style="margin-top:18px; line-height:1.6; max-width:760px;">↳ Apache-2.0 · source and releases: <a href="https://github.com/liza-studio/skillmem" rel="noopener" target="_blank">github.com/liza-studio/skillmem</a> · project site: <a href="https://skillmem.dev" rel="noopener" target="_blank">skillmem.dev</a></p>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="pricing">
+      <div class="container">
+        <header class="section__header section__header--row">
+          <div>
+            <p class="mono-label">Pricing</p>
+            <h2 class="section__title section__title--narrow">Free for people. Paid for companies.</h2>
+          </div>
+          <p class="section__sub">Individuals use Liza at no cost. Companies pay for a dedicated server, setup and support. Prices in US dollars, billed monthly.</p>
+        </header>
+        <div class="grid grid--3 system__cards">
+          <article class="info-card plan">
+            <p class="mono-label">Personal</p>
+            <p class="price">$0</p>
+            <p class="info-card__text">For individuals.</p>
+            <ul>
+              <li>The full team of agents</li>
+              <li>Shared long-term memory</li>
+              <li>No card, no trial period</li>
+            </ul>
+            <a class="btn btn--outline btn--sm" href="https://t.me/LizaPetrovna_bot?start=ai_pricing" target="_blank" rel="noopener">Open in Telegram <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="info-card plan plan--main">
+            <p class="mono-label">Team</p>
+            <p class="price">$490 <small>/ month</small></p>
+            <p class="info-card__text">A dedicated server for one company.</p>
+            <ul>
+              <li>Private instance in our cloud</li>
+              <li>Up to 25 users</li>
+              <li>Company memory, separate from everyone else's</li>
+              <li>Setup and email support</li>
+            </ul>
+            <a class="btn btn--primary btn--sm" href="mailto:hello@lizastudio.ai?subject=Liza%20Team%20plan">Request a deployment <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="info-card plan">
+            <p class="mono-label">Enterprise</p>
+            <p class="price"><small>from</small> $1,900 <small>/ month</small></p>
+            <p class="info-card__text">On your own infrastructure.</p>
+            <ul>
+              <li>Installed on your hardware or cloud account</li>
+              <li>Agents built for your processes</li>
+              <li>Integration with internal systems</li>
+              <li>Service-level agreement</li>
+            </ul>
+            <a class="btn btn--outline btn--sm" href="mailto:hello@lizastudio.ai?subject=Liza%20Enterprise">Talk to us <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cool" id="company">
+      <div class="container">
+        <header class="section__header section__header--row">
+          <div>
+            <p class="mono-label">Company</p>
+            <h2 class="section__title section__title--narrow">Built for our own work first. <span class="text-muted">Then opened to others.</span></h2>
+          </div>
+          <p class="section__sub">Liza started as an internal tool: a team of agents that keeps the context of several businesses and works around the clock. What held up in daily use became the product.</p>
+        </header>
+        <div class="author__row">
+          <figure class="author__quote">
+            <blockquote>“I needed a team that remembers the context of my work and is available at any hour. I could not find one, so I built it.”</blockquote>
+            <figcaption class="mono-label mono-label--muted" style="margin-top:18px;">Sergey Petrukovich · founder, Liza Studio · <a href="https://github.com/mrpetrukovich" target="_blank" rel="noopener">GitHub</a> · <a href="https://dev.to/sergeypetrukovich" target="_blank" rel="noopener">dev.to</a></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="start">
+      <div class="container cta__inner">
+        <p class="mono-label mono-label--muted">Start</p>
+        <h2 class="cta__title">Start with one team.<br><span class="text-muted">Keep everything it learns.</span></h2>
+        <div class="cta__actions">
+          <a class="btn btn--paper" href="mailto:hello@lizastudio.ai?subject=Liza%20for%20Business">Request a deployment <span aria-hidden="true">→</span></a>
+          <a class="btn btn--outline-light" href="https://github.com/liza-studio/skillmem" target="_blank" rel="noopener">View the source <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="logo logo--footer">
+            <svg class="logo__mark" viewBox="-100 -100 200 200" width="44" height="44" aria-hidden="true">
+              <circle cx="0" cy="0" r="82" fill="none" stroke="currentColor" stroke-width="1.25" stroke-dasharray="1.5 4" opacity="0.55"></circle>
+              <circle cx="0" cy="0" r="48" fill="none" stroke="currentColor" stroke-width="1.25" stroke-dasharray="1.5 4" opacity="0.35"></circle>
+              <g><circle cx="82" cy="0" r="9" fill="currentColor"></circle><circle cx="-58" cy="58" r="6.5" fill="currentColor"></circle><circle cx="-30" cy="-76" r="5" fill="#3D5AE0"></circle></g>
+              <g><circle cx="48" cy="-12" r="4" fill="currentColor" opacity="0.55"></circle></g>
+              <circle cx="0" cy="0" r="16" fill="currentColor"></circle>
+              <circle cx="0" cy="0" r="5" fill="#3D5AE0"></circle>
+            </svg>
+            <div>
+              <div class="logo__word">Liza Studio</div>
+              <p class="mono-label mono-label--muted">agent studio</p>
+            </div>
+          </div>
+          <p class="footer__about">AI agent teams with long-term memory. Free for individuals, on a dedicated server for companies.</p>
+        </div>
+        <nav class="footer__nav" aria-label="Product">
+          <p class="mono-label mono-label--muted">Product</p>
+          <ul>
+            <li><a href="#business">For business</a></li>
+            <li><a href="#agents">Agents</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+          </ul>
+        </nav>
+        <nav class="footer__nav" aria-label="Open source">
+          <p class="mono-label mono-label--muted">Open source</p>
+          <ul>
+            <li><a href="https://github.com/liza-studio/skillmem" target="_blank" rel="noopener">skillmem on GitHub</a></li>
+            <li><a href="https://skillmem.dev" target="_blank" rel="noopener">skillmem.dev</a></li>
+            <li><a href="mailto:hello@lizastudio.ai">hello@lizastudio.ai</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__req">
+        <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a> · <a href="mailto:hello@lizastudio.ai">hello@lizastudio.ai</a>
+      </div>
+      <div class="footer__bottom">
+        <span class="mono-label mono-label--muted">© 2026 Liza Studio</span>
+        <span class="mono-label mono-label--muted">lizastudio.ai</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+      var burger = document.querySelector('.header__burger');
+      var menu = document.getElementById('mobile-menu');
+      if (!burger || !menu) return;
+      function setOpen(open) {
+        burger.setAttribute('aria-expanded', String(open));
+        burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        menu.hidden = !open;
+      }
+      burger.addEventListener('click', function () {
+        setOpen(burger.getAttribute('aria-expanded') !== 'true');
+      });
+      menu.addEventListener('click', function (e) { if (e.target.closest('a')) setOpen(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+    })();
+  </script>
+</body>
+</html>
